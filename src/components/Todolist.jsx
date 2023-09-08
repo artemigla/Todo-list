@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ShowTodo } from "./Showtodo";
 import { v4 as uuid } from 'uuid';
 import { Button } from "./Button";
@@ -18,6 +18,15 @@ export const Todolist = () => {
     setTodo([...todo, newTask]);
     setTask('');
   }
+
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todo));
+  }, [todo]);
+
+  useState(() => {
+    const myLocalTasks = JSON.parse(localStorage.getItem('todo'));
+    setTodo(myLocalTasks);
+  }, [])
 
   const deleteTodo = (text) => {
     const newTodos = todo.filter((t) => {

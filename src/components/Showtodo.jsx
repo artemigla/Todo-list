@@ -3,7 +3,6 @@ import '../styles/style.css';
 import { Button } from './Button';
 
 export const ShowTodo = ({ task, remove }) => {
-
   return (
     <ul className='container'>
       {task.map(({ text, id }) => (
