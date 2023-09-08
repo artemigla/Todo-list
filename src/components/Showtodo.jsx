@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/style.css';
+import { Button } from './Button';
 
 export const ShowTodo = ({ task, remove }) => {
 
@@ -8,7 +9,7 @@ export const ShowTodo = ({ task, remove }) => {
       {task.map(({ text, id }) => (
         <div className='block' key={id}>
           <li className='task'>{text}</li>
-          <button onClick={() => remove(id)}>Delete</button>
+          <Button onClick={() => remove(id)} label={'Delete'} />
         </div>
       ))}
     </ul>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ShowTodo } from "./Showtodo";
 import { v4 as uuid } from 'uuid';
+import { Button } from "./Button";
 
 export const Todolist = () => {
 
@@ -29,7 +30,7 @@ export const Todolist = () => {
     <div>
       <div className="form">
         <input type={'text'} value={task} onInput={handleInput} />
-        <button onClick={handleButton}>New task</button>
+        <Button onClick={handleButton} label={'New task'} />
       </div>
       <div>
         <ShowTodo task={todo} remove={deleteTodo} />
