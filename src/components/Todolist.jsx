@@ -23,14 +23,17 @@ export const Todolist = () => {
       return t.id !== text
     });
     setTodo(newTodos);
-
   }
 
   return (
     <div>
-      <input type={'text'} value={task} onInput={handleInput} />
-      <button onClick={handleButton}>New task</button>
-      <ShowTodo task={todo} remove={deleteTodo} />
+      <div className="form">
+        <input type={'text'} value={task} onInput={handleInput} />
+        <button onClick={handleButton}>New task</button>
+      </div>
+      <div>
+        <ShowTodo task={todo} remove={deleteTodo} />
+      </div>
     </div>
   )
 }
