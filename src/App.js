@@ -1,11 +1,10 @@
 import React from "react";
-import { Todolist } from "./components/Todolist";
-import './styles/style.css';
+import { TodoList } from "./components/TodoList";
 
 export const App = () => {
   return (
     <div className="wrapper">
-      <Todolist />
+      <TodoList />
     </div>
   )
 }
